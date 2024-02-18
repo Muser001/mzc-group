@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Dict id="Test">
+    <field id="T1111" name="name" desc="姓名" type="String" length="32" digits="0" pattern="" fieldcode="没想好" dictType="编码类" />
+    <field id="T2222" name="date" desc="日期" type="String" length="32" digits="0" pattern="YYYYMMDD" fieldcode="没想好" dictType="日期类" />
+    <field id="T3333" name="sex" desc="性别" type="String" length="1" digits="0" pattern="" fieldcode="没想好" dictType="代码类" >
+        <enumeration id="" code="0" value="男"/>
+        <enumeration id="" code="1" value="女"/>
+    </field>
+</Dict>
