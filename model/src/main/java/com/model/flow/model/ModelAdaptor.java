@@ -47,7 +47,7 @@ public class ModelAdaptor {
         for (int i = 0; i < lists.getLength(); ++i) {
             Node node = lists.item(i);
             NamedNodeMap namedNodeMap = node.getAttributes();
-            if (!namedNodeMap.getNamedItem("xsi:type").getNodeValue().equalsIgnoreCase("corebank:CBFlowMapping") && !namedNodeMap.getNamedItem("xsi:type").getNodeValue().equalsIgnoreCase("model:NodeElementLabel")) {
+            if (!namedNodeMap.getNamedItem("xsi:type").getNodeValue().equalsIgnoreCase("core:CBFlowMapping") && !namedNodeMap.getNamedItem("xsi:type").getNodeValue().equalsIgnoreCase("model:NodeElementLabel")) {
                 Node idNode = namedNodeMap.getNamedItem("id");
                 if (null == idNode || idNode.getNodeValue().trim().equalsIgnoreCase("")) {
                     throw new RuntimeException("文件名为" + fileName + "的图元id属性不能为空");
@@ -174,7 +174,7 @@ public class ModelAdaptor {
                                 NamedNodeMap namedNodeMap1 = nodess.getAttributes();
                                 Node xsiTypeNode = namedNodeMap1.getNamedItem("xsi:type");
                                 String xsiType = xsiTypeNode.getNodeValue();
-                                if (xsiType.equalsIgnoreCase("corebank:CBFlowMapping")) {
+                                if (xsiType.equalsIgnoreCase("core:CBFlowMapping")) {
                                     if (namedNodeMap1 != null) {
                                         FlowProperties properties = new FlowProperties();
                                         String chkMacFlg = namedNodeMap1.getNamedItem("chkMacFlg") == null ? "N" : namedNodeMap1.getNamedItem("chkMacFlg").getNodeValue();
@@ -264,7 +264,7 @@ public class ModelAdaptor {
             for (int j = 0; j < childNodes.getLength(); ++j) {
                 Node childNode = childNodes.item(j);
                 String childBNodeMap = childNode.getNodeName();
-                if (childBNodeMap.equalsIgnoreCase("corebank:outMappings")) {
+                if (childBNodeMap.equalsIgnoreCase("core:outMappings")) {
                     String byInterface = childNode.getAttributes().getNamedItem("byInterface").getNodeValue();
                     dataMapping.setByInterface(Boolean.valueOf(byInterface));
                     List<DataMappingDetail> mappingList = new ArrayList<>();
@@ -272,7 +272,7 @@ public class ModelAdaptor {
 
                     for (int g = 0; g <childNodes2.getLength(); ++g) {
                         Node item2 = childNodes2.item(g);
-                        if (item2.getNodeName().equalsIgnoreCase("corebank:mappings")) {
+                        if (item2.getNodeName().equalsIgnoreCase("core:mappings")) {
                             DataMappingDetail dataMappingDetail = new DataMappingDetail();
                             Node desNamedItem = item2.getAttributes().getNamedItem("des");
                             if (desNamedItem != null) {
@@ -361,19 +361,19 @@ public class ModelAdaptor {
             Node xsiTypeNode = namedNodeMap.getNamedItem("xsi:type");
             String xsiType = xsiTypeNode.getNodeValue();
             String id;
-            if (xsiType.equalsIgnoreCase("corebank:tForkBegin")) {
+            if (xsiType.equalsIgnoreCase("core:tForkBegin")) {
                 id = namedNodeMap.getNamedItem("id").getNodeValue();
                 flowForkSet.add(id);
                 dealComplexMap(namedNodeMap, complexMap, idMap);
-            }else if (xsiType.equalsIgnoreCase("corebank:tCaseWhenBegin")) {
+            }else if (xsiType.equalsIgnoreCase("core:tCaseWhenBegin")) {
                 id = namedNodeMap.getNamedItem("id").getNodeValue();
                 flowCaseSet.add(id);
                 dealComplexMap(namedNodeMap, complexMap, idMap);
-            } else if (xsiType.equalsIgnoreCase("corebank:tDynamicForkBegin")) {
+            } else if (xsiType.equalsIgnoreCase("core:tDynamicForkBegin")) {
                 id = namedNodeMap.getNamedItem("id").getNodeValue();
                 flowDynamicForkSet.add(id);
                 dealComplexMap(namedNodeMap, complexMap, idMap);
-            } else if (xsiType.equalsIgnoreCase("corebank:tbLoopBegin")) {
+            } else if (xsiType.equalsIgnoreCase("core:tbLoopBegin")) {
                 id = namedNodeMap.getNamedItem("id").getNodeValue();
                 flowLoopSet.add(id);
                 dealComplexMap(namedNodeMap, complexMap, idMap);
@@ -575,31 +575,31 @@ public class ModelAdaptor {
         NamedNodeMap namedNodeMap = node.getAttributes();
         Node xsiTypeNode = namedNodeMap.getNamedItem("xsi:type");
         switch (xsiTypeNode.getNodeValue()) {
-            case "corebank:CBBean":
+            case "core:CBBean":
                 putCBBeanNode(nodeMap, node);
                 break;
-            case "corebank:CBMethod":
+            case "core:CBMethod":
                 putCBMethodNode(nodeMap, node);
                 break;
-            case "corebank:CBService":
+            case "core:CBService":
                 putCBService(nodeMap, node);
                 break;
-            case "corebank:CBExpr":
+            case "core:CBExpr":
                 putCBExprNode(nodeMap, node);
                 break;
-            case "corebank:CBSubflow":
+            case "core:CBSubflow":
                 putCBSubflowNode(nodeMap, node);
                 break;
-            case "corebank:tCaseWhenBegin":
+            case "core:tCaseWhenBegin":
                 putCaseWhenBeginNode(nodeMap, node);
                 break;
-            case "corebank:tDynamicForkBegin":
+            case "core:tDynamicForkBegin":
                 putTWhileStartNode(nodeMap, node);
                 break;
-            case "corebank:tForkBegin":
+            case "core:tForkBegin":
                 putTForEachStartNode(nodeMap, node);
                 break;
-            case "corebank:cbLoopBegin":
+            case "core:cbLoopBegin":
                 putLoopBeginNode(nodeMap, node);
                 break;
         }
@@ -894,7 +894,7 @@ public class ModelAdaptor {
                 String des;
                 String src;
                 Node srcNameItem;
-                if (childBNodeMap.equalsIgnoreCase("corebank:outMappings")) {
+                if (childBNodeMap.equalsIgnoreCase("core:outMappings")) {
                     dataMapping = new DataMapping();
                     byInterface = childNode.getAttributes().getNamedItem("byInterface").getNodeValue();
                     dataMapping.setByInterface(Boolean.valueOf(byInterface));
@@ -903,7 +903,7 @@ public class ModelAdaptor {
 
                     for (int g = 0; g < childNodes2.getLength(); ++g) {
                         item2 = childNodes2.item(g);
-                        if (item2.getNodeName().equalsIgnoreCase("corebank:mappings")) {
+                        if (item2.getNodeName().equalsIgnoreCase("core:mappings")) {
                             dataMappingDetail = new DataMappingDetail();
                             desNameItem = item2.getAttributes().getNamedItem("des");
                             if (desNameItem != null) {
@@ -924,7 +924,7 @@ public class ModelAdaptor {
                     flowServiceNode.setOutMapping(dataMapping);
                 }
 
-                if (childBNodeMap.equalsIgnoreCase("corebank:inMappings")) {
+                if (childBNodeMap.equalsIgnoreCase("core:inMappings")) {
                     dataMapping = new DataMapping();
                     byInterface = childNode.getAttributes().getNamedItem("byInterface").getNodeValue();
                     dataMapping.setByInterface(Boolean.valueOf(byInterface));
@@ -933,7 +933,7 @@ public class ModelAdaptor {
 
                     for (int g = 0; g < childNodes2.getLength(); ++g) {
                         item2 = childNodes2.item(g);
-                        if (item2.getNodeName().equalsIgnoreCase("corebank:mappings")) {
+                        if (item2.getNodeName().equalsIgnoreCase("core:mappings")) {
                             dataMappingDetail = new DataMappingDetail();
                             desNameItem = item2.getAttributes().getNamedItem("des");
                             if (desNameItem != null) {

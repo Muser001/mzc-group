@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<process:otsflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:corebank="http://com.psbc.emf.core.corebank" xmlns:model="com.psbc.emf.core" xmlns:process="a" description="" id="3927" name="服务编排" mapper="t3927OutMapper" input="com.psbc.rm.dom.pcs.dto.T3927InputDTO" output="com.psbc.rm.dom.pcs.dto.T3927OutputDTO" longname="货币桥" exchange="com.psbc.rm.dom.pcs.dto.T3927ExchangeDTO">
+<process:otsflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://com.psbc.emf.core.core" xmlns:model="com.psbc.emf.core" xmlns:process="a" description="" id="3927" name="服务编排" mapper="t3927OutMapper" input="com.psbc.rm.dom.pcs.dto.T3927InputDTO" output="com.psbc.rm.dom.pcs.dto.T3927OutputDTO" longname="货币桥" exchange="com.psbc.rm.dom.pcs.dto.T3927ExchangeDTO">
   <nodes xsi:type="model:Note" id="node0" name="注释" condition="注释" nodeType="note" type="note" content="数字火火火" title="2021.1.5">
     <location x="148" y="135"/>
     <size length="135" width="427"/>
   </nodes>
   <nodes xsi:type="process:tStart" id="start0" name="开始" condition="开始" type="start">
-    <sourceConnections xsi:type="corebank:tLink" id="link0" name="link0" condition="" isDefault="true" type="transaction">
+    <sourceConnections xsi:type="core:tLink" id="link0" name="link0" condition="" isDefault="true" type="transaction">
       <sourceNode>start0</sourceNode>
       <targetNode>RM40BS40290</targetNode>
     </sourceConnections>
@@ -29,16 +29,16 @@
     <figSize height="17" width="25"/>
     <node>end0</node>
   </nodes>
-  <nodes xsi:type="corebank:CBFlowMapping0" dbId="false" mapperGenAll="false" cancelServNo="" checkFlag="0" inTxStep="" macGroupId="" oprAtt="2" outTxStep="" reverseServNo="" safCompenstatorCode="" safSupportType="0" transactionMode="1" transProp="0" txnFlag="0">
+  <nodes xsi:type="core:CBFlowMapping0" dbId="false" mapperGenAll="false" cancelServNo="" checkFlag="0" inTxStep="" macGroupId="" oprAtt="2" outTxStep="" reverseServNo="" safCompenstatorCode="" safSupportType="0" transactionMode="1" transProp="0" txnFlag="0">
     <location x="0" y="0"/>
     <size height="1" width="1"/>
-    <corebank:outMappings byInterface="false">
-      <corebank:mappings des="" src="property0"/>
-      <corebank:mappings des="" src="out"/>
-    </corebank:outMappings>
+    <core:outMappings byInterface="false">
+      <core:mappings des="" src="property0"/>
+      <core:mappings des="" src="out"/>
+    </core:outMappings>
   </nodes>
-  <nodes xsi:type="corebank:CBService" id="RM40BS40290" name="服务" type="corebankbase" cbCondition="" cbId="false" desc="数字货币桥-自动审核" input="com.psbc.RmxxxxxRM40BS40290Input" longname="数字货币桥-自动审核" mapper="RmxxxxxRM40BS40290Mapper" mapperGenAll="false" output="com.psbc.RmxxxxxRM40BS40290Output" dusType="0" serviceCode="RM40BS40290">
-    <sourceConnections xsi:type="corebank:tLink" id="link1" name="link1" condition="" isDefault="true" type="transaction">
+  <nodes xsi:type="core:CBService" id="RM40BS40290" name="服务" type="corebankbase" cbCondition="" cbId="false" desc="数字货币桥-自动审核" input="com.psbc.RmxxxxxRM40BS40290Input" longname="数字货币桥-自动审核" mapper="RmxxxxxRM40BS40290Mapper" mapperGenAll="false" output="com.psbc.RmxxxxxRM40BS40290Output" dusType="0" serviceCode="RM40BS40290">
+    <sourceConnections xsi:type="core:tLink" id="link1" name="link1" condition="" isDefault="true" type="transaction">
       <sourceNode>RM40BS40290</sourceNode>
       <targetNode>caseWhenBegin0</targetNode>
     </sourceConnections>
@@ -46,26 +46,26 @@
     <location x="280" y="144"/>
     <size height="28" width="22"/>
     <nodeLabel>RM40BS40290label</nodeLabel>
-    <corebank:inMappings byInterface="false">
-      <corebank:mappings des="" src="excCounCd"/>
-      <corebank:mappings des="" src="dispRemCurrCd"/>
-    </corebank:inMappings>
-    <corebank:outMappings byInterface="false">
-      <corebank:mappings des="xxx" src=""/>
-      <corebank:mappings des="xx1" src=""/>
-    </corebank:outMappings>
+    <core:inMappings byInterface="false">
+      <core:mappings des="" src="excCounCd"/>
+      <core:mappings des="" src="dispRemCurrCd"/>
+    </core:inMappings>
+    <core:outMappings byInterface="false">
+      <core:mappings des="xxx" src=""/>
+      <core:mappings des="xx1" src=""/>
+    </core:outMappings>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="RM40BS40290lable" name="label" nodeType="label">
     <location x="126" y="180"/>
     <figSize height="17" width="186"/>
     <node>RM40BS40290</node>
   <nodes>
-  <nodes xsi:type="corebank:tCaseWhenBegin" id="caseWhenBegin0" name="case开始" grouped="true" type="caseWhenBegin" matchedName="caseWhenEnd0" editId="caseWhenBegin0">
-    <sourceConnections xsi:type="corebank:tLink" description="" id="link3" name="审核成功" condition"&quot;00&quot; == exchange.iaccRsltNo" isDefault="true" type="transaction">
+  <nodes xsi:type="core:tCaseWhenBegin" id="caseWhenBegin0" name="case开始" grouped="true" type="caseWhenBegin" matchedName="caseWhenEnd0" editId="caseWhenBegin0">
+    <sourceConnections xsi:type="core:tLink" description="" id="link3" name="审核成功" condition"&quot;00&quot; == exchange.iaccRsltNo" isDefault="true" type="transaction">
       <sourceNode>caseWhenBegin0</sourceNode>
       <targetNode>RM40BS10294</targetNode>
     </sourceConnections>
-    <sourceConnections xsi:type="corebank:tLink" description="" id="link8" name="审核失败" condition="&quot;00&quot; != exchange.iaccRsltNo" isDefault="true" type="transaction">
+    <sourceConnections xsi:type="core:tLink" description="" id="link8" name="审核失败" condition="&quot;00&quot; != exchange.iaccRsltNo" isDefault="true" type="transaction">
       <sourceNode>caseWhenBegin0</sourceNode>
       <targetNode>caseWhenEnd0</targetNode>
     </sourceConnections>
@@ -79,8 +79,8 @@
     <figSize height="17" width="51"/>
     <node>caseWhenBegin0</node>
   </nodes>
-  <nodes xsi:type="corebank:tCaseWhenEnd" id="caseWhenEnd0" name="case结束" condition="case结束" grouped="true" type="caseWhenEnd" matchedName="caseWhenBegin0">
-    <sourceConnections xsi:type="corebank:tLink" id="link2" name="link2" condition="" isDefault="true" type="transaction">
+  <nodes xsi:type="core:tCaseWhenEnd" id="caseWhenEnd0" name="case结束" condition="case结束" grouped="true" type="caseWhenEnd" matchedName="caseWhenBegin0">
+    <sourceConnections xsi:type="core:tLink" id="link2" name="link2" condition="" isDefault="true" type="transaction">
       <sourceNode>caseWhenEnd0</sourceNode>
       <targetNode>RM40BS10295</targetNode>
     </sourceConnections>
@@ -102,8 +102,8 @@
     <chidren>caseWhenBegin0</chidren>
     <chidren>RM40BS10294</chidren>
   </nodes>
-  <nodes xsi:type="corebank:CBService" id="RM40BS10294" name="服务1" grouped="true" type="corebankbase" cbCondition="" cbId="false" desc="数字货币桥-自动入账" input="com.psbc.RM40BS10294xxxxInputDTO" longname="数字货币-自动入账" mapper="RM40BS10294xxxxMapper" mapperGenAll="false" output="com.psbc.RM40BS10294xxxxOutputDTO" dusType="B" keyNodeFlag="0" serviceCode="RM40BS10294">
-    <sourceConnections xsi:type="corebank:tLink" id="link7" name="link7" condition="" isDefault="true" type="transaction">
+  <nodes xsi:type="core:CBService" id="RM40BS10294" name="服务1" grouped="true" type="corebankbase" cbCondition="" cbId="false" desc="数字货币桥-自动入账" input="com.psbc.RM40BS10294xxxxInputDTO" longname="数字货币-自动入账" mapper="RM40BS10294xxxxMapper" mapperGenAll="false" output="com.psbc.RM40BS10294xxxxOutputDTO" dusType="B" keyNodeFlag="0" serviceCode="RM40BS10294">
+    <sourceConnections xsi:type="core:tLink" id="link7" name="link7" condition="" isDefault="true" type="transaction">
       <sourceNode>RM40BS10294</sourceNode>
       <targetNode>caseWhenEnd0</targetNode>
     </sourceConnections>
@@ -111,21 +111,21 @@
     <location x="494" y="60"/>
     <size height="28" width="22"/>
     <nodeLabel>RM40BS10294<nodeLabel>
-    <corebank:inMappings byInterface="false">
-      <corebank:mappings des="" src="remNo">
-      <corebank:mappings des="" src="xxx">
-    </corebank:inMappings>
-    <corebank:outMappings byInterface="false">
-      <corebank:mappings des="xxx" src=""/>
-      <corebank:mappings des="xxx1" src=""/>
-    </corebank:outMappings>
+    <core:inMappings byInterface="false">
+      <core:mappings des="" src="remNo">
+      <core:mappings des="" src="xxx">
+    </core:inMappings>
+    <core:outMappings byInterface="false">
+      <core:mappings des="xxx" src=""/>
+      <core:mappings des="xxx1" src=""/>
+    </core:outMappings>
   <nodes xsi:type="model:NodeElementLabel" id="RM40BS10294label" name="label" nodeType="label">
     <location x="424" y="96"/>
     <figSize height="17" width="162"/>
     <node>RM40BS10294</node>
   </nodes>
-  <nodes xsi:type="corebank:CBService" id="RM40BS10295" name="服务2" type="corebankbase" cbCondition="" cbId="false" desc="数字货币桥-结果通知" input="RM40BS10295xxxInputDTO" longname="数字货币桥-结果通知" mapper="RM40BS10295xxxMapper" mapperGenAll="false" output="com.psbc.RM40BS10295xxxOutputDTO" dusType="B" keyNodeFlag="0" serviceCode="RM40BS10295">
-    <sourceConnections xsi:type="corebank:tLink" id="link9" name="link9" condition="" isDefault="true" type="transaction">
+  <nodes xsi:type="core:CBService" id="RM40BS10295" name="服务2" type="corebankbase" cbCondition="" cbId="false" desc="数字货币桥-结果通知" input="RM40BS10295xxxInputDTO" longname="数字货币桥-结果通知" mapper="RM40BS10295xxxMapper" mapperGenAll="false" output="com.psbc.RM40BS10295xxxOutputDTO" dusType="B" keyNodeFlag="0" serviceCode="RM40BS10295">
+    <sourceConnections xsi:type="core:tLink" id="link9" name="link9" condition="" isDefault="true" type="transaction">
       <sourceNode>RM40BS10295</sourceNode>
       <targetNode>end0</targetNode>
     <sourceConnections>
@@ -133,11 +133,11 @@
     <location x="780" y="144"/>
     <size height="28" width="22"/>
     <nodeLabel>RM40BS10295</nodeLabel>
-    <corebank:inMappings byInterface="false">
-      <corebank:mappings des="" src="xxx"/>
-      <corebank:mappings des="" src="xxx1"/>
-    </corebank:inMappings>
-    <corebank:outMappings byInterface="false"/>
+    <core:inMappings byInterface="false">
+      <core:mappings des="" src="xxx"/>
+      <core:mappings des="" src="xxx1"/>
+    </core:inMappings>
+    <core:outMappings byInterface="false"/>
   </nodes>
   <nodes xsi:type="model:NodeElementLabel" id="RM40BS10295label" name="label" nodeType="label">
     <location x="710" y="180"/>
