@@ -5,9 +5,12 @@ import com.model.message.header.ServiceResponseHeader;
 import lombok.Data;
 import lombok.Generated;
 
+import java.io.Serializable;
 
-public class ServiceResponseMsg {
 
+public class ServiceResponseMsg implements Serializable {
+
+    private static final long serialVersionUID = -5258511846232040517L;
     protected ServiceResponseHeader txHeader = new ServiceResponseHeader();
 
     protected ServiceResponseBody txBody = new ServiceResponseBody();

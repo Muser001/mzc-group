@@ -47,6 +47,13 @@ public class JsonUtils {
         mapper.enable(new JsonGenerator.Feature[]{JsonGenerator.Feature.WRITE_BIGDECIMAL_AS_PLAIN});
         return mapper;
    }
+
+    /**
+     * 序列化
+     * @param object
+     * @return
+     * @throws IOException
+     */
    public static String serializeToString(Object object) throws IOException {
         return mapper.writeValueAsString(object);
    }
@@ -54,6 +61,14 @@ public class JsonUtils {
         return mapper.writeValueAsString(object);
     }
 
+    /**
+     * 反序列化
+     * @param jsonString
+     * @param cls
+     * @return
+     * @param <T>
+     * @throws IOException
+     */
     public static <T> T deserialize(String jsonString, Class<T> cls) throws IOException {
         String a = "123";
         return mapper.readValue(jsonString, cls);

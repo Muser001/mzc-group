@@ -21,5 +21,8 @@ public class ComposeChainStepConstans {
      */
     public static final int ATOMIC_LOCAL_TRANS_MNGT_STEP = 0;
 
-
+    /**
+     * 责任链步骤：基础服务日志
+     */
+    public static final int ATOMIC_LOCAL_TRANS_LOG_STEP = 1000;
 }

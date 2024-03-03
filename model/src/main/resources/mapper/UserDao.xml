@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--MyBatis的DTD约束-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    mapper：核心根标签
+    namespace属性：名称空间
+-->
+<mapper namespace="com.psbc.rm.dom.dao.UserDao">
+
+    <update id="updateNumber" parameterType="com.psbc.rm.dom.pojo.Test_1">
+        update test_1
+        set number = #{number},
+            time = #{time}
+        where
+            name = #{name}
+    </update>
+
+    <select id="getNumber" resultType="Integer" parameterType="String">
+        SELECT number
+        FROM test_1
+        <where>
+            <if test="name != null and name != ''">
+                name = #{name}
+            </if>
+        </where>
+    </select>
+</mapper>

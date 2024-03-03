@@ -1,12 +1,19 @@
 package com.model.log;
 
 import com.model.dao.po.SeComposeRunLogPo;
+import com.psbc.rm.dom.domain.MyLog;
+import com.psbc.rm.dom.pojo.AtomicLogDo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class RunLogDService {
+
+    @Autowired
+    private MyLog myLog;
 
     /**
      * 独立事务插入RunLog
@@ -36,13 +43,18 @@ public class RunLogDService {
     }
 
     /**
-     * 反向排序查询RunLog
-     * @param txDate 交易日期
-     * @param coreSysSerialNo 核心流水号
-     * @param zoneVal
+     * 查询RunLog
      * @return
      */
-    public List<SeComposeRunLogPo> queryRunLogByCoreSysSerialNo(String txDate, String coreSysSerialNo, String zoneVal) {
-        return null;
+    public List<SeComposeRunLogPo> queryRunLogByCoreSysSerialNo(SeComposeRunLogPo txLog) {
+        // TODO: 2024/2/28 后续加日期，加唯一标识码
+        List<SeComposeRunLogPo> subTransactionLogs = new ArrayList<>();
+        List<AtomicLogDo> atomicLogDos = myLog.selectLog(txLog.getComposeCode());
+        for (AtomicLogDo atomicLogDo : atomicLogDos) {
+            SeComposeRunLogPo seComposeRunLogPo = new SeComposeRunLogPo();
+            seComposeRunLogPo.setPbsReqMsg(atomicLogDo.getServiceRequestMsg());
+            subTransactionLogs.add(seComposeRunLogPo);
+        }
+        return subTransactionLogs;
     }
 }

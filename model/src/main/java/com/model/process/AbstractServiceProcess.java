@@ -51,6 +51,7 @@ public abstract class AbstractServiceProcess implements CommonChainProcess{
             log.error("发生异常: ",t);
             //PCS/PBS出现异常虚通知APM
             chainExecutor.exceptionProcess(request,response,t,stack);
+            throw t;
         } finally {
             if(localTransactionComponent.hasLocalTransaction()){
                 log.error("事务未处理泄露");

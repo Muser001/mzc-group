@@ -3,8 +3,11 @@ package com.model.message.body.txcomn;
 import lombok.Data;
 import lombok.Generated;
 
+import java.io.Serializable;
 
-public class TxComn3 {
+
+public class TxComn3 implements Serializable {
+    private static final long serialVersionUID = 2105627842412799860L;
     private String txComn3;
     @Generated
     public String getTxComn3() {

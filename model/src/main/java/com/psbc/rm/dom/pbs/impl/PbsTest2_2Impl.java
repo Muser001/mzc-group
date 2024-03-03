@@ -16,6 +16,7 @@ public class PbsTest2_2Impl implements PbsTest2_2 {
 
     @Override
     public PbsTest2_2OutputDTO compensate(PbsTest2_2InputDTO data) {
+        System.out.println("222222222222222");
         return null;
     }
 }

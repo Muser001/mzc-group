@@ -24,9 +24,7 @@ public class MainCompensator {
     private RunLogDService runLogDService;
 
     public boolean process(SeComposeRunLogPo txLog) {
-        List<SeComposeRunLogPo> subTransactionLogs = runLogDService.queryRunLogByCoreSysSerialNo(
-                txLog.getTxDate(), txLog.getCoreSysSeialNo(), txLog.getZoneVal()
-        );
+        List<SeComposeRunLogPo> subTransactionLogs = runLogDService.queryRunLogByCoreSysSerialNo(txLog);
 
         log.info("PCS[{}]开始补偿",txLog.getComposeCode());
         for (SeComposeRunLogPo subLog : subTransactionLogs) {

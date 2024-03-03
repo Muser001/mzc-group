@@ -11,8 +11,11 @@ import com.model.message.ServiceResponseMsg;
 import com.model.registry.entity.ComposeServiceRegister;
 import com.model.registry.registerhandler.IComposeServiceRegisterHandler;
 import com.model.transaction.MainCompensator;
+import com.model.util.JsonUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.IOException;
 
 /**
  * 数据初始化，后期加上防重，分布式事务等的判断
@@ -31,9 +34,20 @@ public class ComposePreTxnLogProcess extends AbstractChainStep{
     private MainCompensator compensator;
 
     @Override
-    public boolean preProcess(ServiceRequestMsg serviceRequestMsg, ServiceResponseMsg serviceResponseMsg) {
+    public boolean preProcess(ServiceRequestMsg serviceRequestMsg, ServiceResponseMsg serviceResponseMsg){
         ComposeServiceRegister serviceRegister = loadServiceRegister(serviceRequestMsg.getTxHeader().getServNo());
         EngineContextWrapper.setComposeServiceRegister(serviceRegister);
+        // 登记日志
+        SeComposeRunLogPo seComposeRunLogPo = new SeComposeRunLogPo();
+        String str = null;
+        try {
+            str = JsonUtils.serializeToStringSensitive(serviceRequestMsg);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        seComposeRunLogPo.setPbsReqMsg(str);
+        seComposeRunLogPo.setComposeCode(serviceRequestMsg.getTxHeader().getServNo());
+        EngineContextWrapper.setSeComposeRunLogPo(seComposeRunLogPo);
         return true;
     }
 
