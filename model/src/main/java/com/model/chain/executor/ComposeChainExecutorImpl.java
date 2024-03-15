@@ -3,7 +3,6 @@ package com.model.chain.executor;
 import com.model.chain.servicechain.ServiceChainStep;
 import com.model.message.ServiceRequestMsg;
 import com.model.message.ServiceResponseMsg;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ClassUtils;

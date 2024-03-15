@@ -1,6 +1,5 @@
 package com.psbc.rm.dom.pojo;
 
-import com.model.message.ServiceRequestMsg;
 import lombok.Data;
 
 @Data

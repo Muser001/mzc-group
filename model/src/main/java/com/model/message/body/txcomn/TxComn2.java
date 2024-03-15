@@ -1,6 +1,5 @@
 package com.model.message.body.txcomn;
 
-import lombok.Data;
 import lombok.Generated;
 
 import java.io.Serializable;

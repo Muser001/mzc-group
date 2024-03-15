@@ -2,7 +2,6 @@ package com.model.message;
 
 import com.model.message.body.ServiceRequestBody;
 import com.model.message.header.ServiceRequestHeader;
-import lombok.Data;
 import lombok.Generated;
 
 import java.io.Serializable;

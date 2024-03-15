@@ -3,7 +3,6 @@ package com.model.process;
 import com.model.context.EngineContextWrapper;
 import com.model.dto.BaseInputDTO;
 import com.model.dto.BaseOutputDTO;
-import com.model.enumtype.EngineBaseEnumType;
 import com.model.message.ServiceRequestMsg;
 import com.model.message.ServiceResponseMsg;
 import com.model.registry.registerhandler.IAtomicService;

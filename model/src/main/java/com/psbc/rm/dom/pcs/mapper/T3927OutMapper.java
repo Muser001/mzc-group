@@ -2,7 +2,9 @@ package com.psbc.rm.dom.pcs.mapper;
 
 import com.model.mapper.FlowOutputMapper;
 import com.model.util.EntityDTOConvert;
-import com.psbc.rm.dom.pcs.dto.*;
+import com.psbc.rm.dom.pcs.dto.T3927ExchangeDTO;
+import com.psbc.rm.dom.pcs.dto.T3927InputDTO;
+import com.psbc.rm.dom.pcs.dto.T3927OutputDTO;
 import org.springframework.stereotype.Component;
 
 @Component

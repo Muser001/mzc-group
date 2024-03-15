@@ -3,7 +3,6 @@ package com.model.message.body;
 import com.model.message.body.txcomn.TxComn1;
 import com.model.message.body.txcomn.TxComn2;
 import com.model.message.body.txcomn.TxComn3;
-import com.model.message.body.txcomn.TxEntity;
 import lombok.Data;
 
 import java.io.Serializable;

@@ -4,7 +4,6 @@ import com.model.flownode.FlowTransactionConf;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
 
-import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.Callable;
 

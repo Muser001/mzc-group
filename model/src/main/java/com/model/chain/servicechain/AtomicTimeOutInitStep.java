@@ -9,9 +9,7 @@ import com.model.message.ServiceResponseMsg;
 import com.model.registry.entity.AtomicServiceRegister;
 import com.model.registry.registerhandler.AtomicServiceRegisterHandler;
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 
 @Slf4j

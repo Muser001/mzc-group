@@ -1,10 +1,8 @@
 package com.model.chain.manager;
 
 import com.model.annotation.AtomicChainStep;
-import com.model.annotation.ComposeChainStep;
 import com.model.chain.servicechain.ServiceChainStep;
 import com.model.chain.stepcomparator.AtomicChainStepComparator;
-import com.model.chain.stepcomparator.ComposeChainStepComparator;
 import com.model.enumtype.EngineBaseEnumType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;

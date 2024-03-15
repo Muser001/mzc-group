@@ -27,7 +27,7 @@ public class AtomicLocalTransMngtStep extends AbstractChainStep{
     @Override
     public boolean preProcess(ServiceRequestMsg serviceRequestMsg, ServiceResponseMsg serviceResponseMsg) {
         if (ServiceType.OUTBOUND.equals(EngineContextWrapper.getAtomicServiceRegister().getServiceType())
-            ||OperateType.QUERY == (EngineContextWrapper.getAtomicServiceRegister().getOperateType())) {
+            || OperateType.QUERY == (EngineContextWrapper.getAtomicServiceRegister().getOperateType())) {
             return true;
         }
         localTransactionComponent.openTransaction();

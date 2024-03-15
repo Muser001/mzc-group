@@ -1,6 +1,5 @@
 package com.model.util.metadata;
 
-import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
@@ -53,7 +52,7 @@ public class Field {
     /**
      * 枚举值
      */
-    private List<com.model.util.metadata.Enumeration> enumerations = new ArrayList<>();
+    private List<Enumeration> enumerations = new ArrayList<>();
 
     @XmlAttribute
     public String getId() {
@@ -120,7 +119,7 @@ public class Field {
         this.format = format;
     }
     @XmlElement(name = "enumeration")
-    public List<com.model.util.metadata.Enumeration> getEnumerations() {
+    public List<Enumeration> getEnumerations() {
         return enumerations;
     }
 

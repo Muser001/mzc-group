@@ -2,7 +2,6 @@ package com.psbc.rm.dom.pbs.mapper;
 
 import com.model.mapper.ServiceNodeMapper;
 import com.model.util.EntityDTOConvert;
-import com.psbc.rm.dom.pbs.dto.PbsTest2_2InputDTO;
 import com.psbc.rm.dom.pbs.dto.PbsTest2_3InputDTO;
 import com.psbc.rm.dom.pbs.dto.PbsTest2_3OutputDTO;
 import com.psbc.rm.dom.pcs.dto.T3927ExchangeDTO;

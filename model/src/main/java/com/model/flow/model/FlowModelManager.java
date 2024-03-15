@@ -3,10 +3,8 @@ package com.model.flow.model;
 import com.model.flownode.FlowTransactionConf;
 import com.model.util.ContextUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Iterator;

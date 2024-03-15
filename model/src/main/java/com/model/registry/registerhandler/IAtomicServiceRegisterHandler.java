@@ -1,7 +1,6 @@
 package com.model.registry.registerhandler;
 
 import com.model.registry.entity.AtomicServiceRegister;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 

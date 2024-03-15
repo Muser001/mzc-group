@@ -2,7 +2,6 @@ package com.model.flownode.nodeclass;
 
 import com.model.flownode.FlowComposite;
 import com.model.flownode.FlowNode;
-import org.glassfish.jersey.internal.jsr166.Flow;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;

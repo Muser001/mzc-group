@@ -5,7 +5,6 @@ import com.model.mapper.DataMapping;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * 方法节点模型定义

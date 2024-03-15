@@ -4,7 +4,6 @@ import com.model.flownode.FlowNode;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * 表达式节点模型定义

@@ -2,7 +2,6 @@ package com.model.util.metadata;
 
 import com.model.chain.request.MetadataValidateResult;
 import com.model.chain.request.ValidateInfo;
-import com.model.context.ServiceContextHandler;
 import com.model.dto.BaseInputDTO;
 import com.model.init.dict.MetadataManager;
 import com.model.util.ContextUtil;

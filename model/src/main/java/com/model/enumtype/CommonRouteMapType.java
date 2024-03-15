@@ -1,6 +1,5 @@
 package com.model.enumtype;
 
-import lombok.Data;
 import lombok.Getter;
 
 /**

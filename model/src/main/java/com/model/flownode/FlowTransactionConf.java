@@ -1,6 +1,5 @@
 package com.model.flownode;
 
-import com.model.flownode.FlowNode;
 import com.model.flownode.properties.FlowProperties;
 import com.model.mapper.DataMapping;
 
