@@ -8,6 +8,7 @@ import com.model.process.CommonChainProcess;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -22,6 +23,9 @@ public class ComposeServiceAccessor {
     @Autowired
     @Qualifier("composeProcess")
     private CommonChainProcess commonProcess;
+    
+    @Autowired
+    private ApplicationContext applicationContext;
 
 //    @Autowired
 //    private IComposeServiceRegisterHandler composeServiceRegisterHandler;

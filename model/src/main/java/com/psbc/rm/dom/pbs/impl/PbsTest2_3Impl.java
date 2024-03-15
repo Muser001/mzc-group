@@ -16,7 +16,7 @@ public class PbsTest2_3Impl implements PbsTest2_3 {
     public PbsTest2_3OutputDTO doService(PbsTest2_3InputDTO data) {
 
         student.fun6();
-        int a = 1/0;
+//        int a = 1/0;
         PbsTest2_3OutputDTO outputDTO = new PbsTest2_3OutputDTO();
         outputDTO.setName(data.getName());
         return outputDTO;

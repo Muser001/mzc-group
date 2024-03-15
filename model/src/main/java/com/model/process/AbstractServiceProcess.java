@@ -8,7 +8,6 @@ import com.model.message.ServiceResponseMsg;
 import com.model.transaction.LocalTransactionComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

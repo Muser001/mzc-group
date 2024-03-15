@@ -1,2 +1,0 @@
-contextHandlerFilter=com.model.filter.ContextHandlerFilter
-consumerApplication=com.model.filter.RequestMessageParseFilter

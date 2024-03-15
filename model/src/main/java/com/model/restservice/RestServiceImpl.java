@@ -1,7 +1,6 @@
 package com.model.restservice;
 
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.model.message.ServiceRequestMsg;
 import com.model.message.ServiceResponseMsg;
 import org.apache.dubbo.config.annotation.DubboService;

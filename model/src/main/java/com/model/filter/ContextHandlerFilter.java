@@ -7,6 +7,7 @@ import org.apache.dubbo.rpc.*;
 import org.apache.dubbo.rpc.Filter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 @Activate(
         group = {"provider"},
@@ -19,7 +20,8 @@ public class ContextHandlerFilter implements Filter {
     @Override
     public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
         ServiceRequestMsg requestMsg = null;
-        requestMsg = (ServiceRequestMsg) RpcContext.getContext().getObjectAttachment("currentRequest");
+        //requestMsg = (ServiceRequestMsg) RpcContext.getContext().getObjectAttachment("currentRequest");
+        requestMsg = (ServiceRequestMsg) RpcContext.getContext().get("currentRequest");
         logger.info("currentRequest before invoking the service: {}", requestMsg);
         if (requestMsg != null) {
             ThreadLocalContext.buildServiceContext(requestMsg,false);
