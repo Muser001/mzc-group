@@ -1,0 +1,1 @@
+描述：根据公积金和银行项目开发，由服务编排（physical composition service）控制业务逻辑类（physical basic service）的执行顺序，采用责任链设计模式，分别控制PCS,PBS的前处理和后处理。使用编程式事务控制本地事务，采用saga将PCS长活分解为PBS本地事务，同时实现补偿逻辑。使用SAF（save and forward）实现外呼系统超时，失败时的重发、补偿与恢复。通过JAXB实现xml与java对象的转化，实现flow文件读取。
