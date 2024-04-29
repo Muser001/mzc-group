@@ -3,16 +3,24 @@ mybatis:
   mapper-locations: classpath:/mapper/*.xml
 spring:
   application:
-    name: model-mzc
+    name: model_mzc
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
-      config:
-        namespace: 2e16a0d0-f9e4-4f11-aba1-68557bdb93a5
+      server-addr: nacos://127.0.0.1:8848
+
+
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8002
 # 后面的bean会覆盖前面相同名称的bean,暂时方案
 #  main:
 #    allow-bean-definition-overriding: true
-dubbo:
-  registry:
-    address: nacos://127.0.0.1:8848
-    namespace: 2e16a0d0-f9e4-4f11-aba1-68557bdb93a5
+
+
+#只需在生产者配置即可，不需要在消费者配置，所以不在此配置
+#dubbo:
+#  registry:
+#    address: nacos://127.0.0.1:8848
+#    id: model_mzc
+#  application:
+#    name: model_mzc

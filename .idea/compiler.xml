@@ -8,12 +8,114 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="model" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sentinel-adapter" target="17" />
+      <module name="sentinel-annotation-aspectj" target="17" />
+      <module name="sentinel-annotation-cdi-interceptor" target="1.5" />
+      <module name="sentinel-annotation-quarkus-adapter" target="1.8" />
+      <module name="sentinel-annotation-quarkus-adapter-deployment" target="1.8" />
+      <module name="sentinel-apache-dubbo-adapter" target="1.5" />
+      <module name="sentinel-apache-dubbo3-adapter" target="1.5" />
+      <module name="sentinel-apache-httpclient-adapter" target="1.5" />
+      <module name="sentinel-api-gateway-adapter-common" target="1.5" />
+      <module name="sentinel-benchmark" target="1.5" />
+      <module name="sentinel-cluster" target="1.5" />
+      <module name="sentinel-cluster-client-default" target="17" />
+      <module name="sentinel-cluster-common-default" target="17" />
+      <module name="sentinel-cluster-server-default" target="17" />
+      <module name="sentinel-cluster-server-envoy-rls" target="1.5" />
+      <module name="sentinel-core" target="1.5" />
+      <module name="sentinel-dashboard" target="17" />
+      <module name="sentinel-datasource-apollo" target="1.5" />
+      <module name="sentinel-datasource-consul" target="1.5" />
+      <module name="sentinel-datasource-etcd" target="1.8" />
+      <module name="sentinel-datasource-eureka" target="1.5" />
+      <module name="sentinel-datasource-extension" target="1.5" />
+      <module name="sentinel-datasource-nacos" target="1.5" />
+      <module name="sentinel-datasource-redis" target="1.5" />
+      <module name="sentinel-datasource-spring-cloud-config" target="1.5" />
+      <module name="sentinel-datasource-zookeeper" target="1.5" />
+      <module name="sentinel-demo" target="1.5" />
+      <module name="sentinel-demo-annotation-cdi-interceptor" target="17" />
+      <module name="sentinel-demo-annotation-spring-aop" target="1.5" />
+      <module name="sentinel-demo-apache-dubbo" target="1.5" />
+      <module name="sentinel-demo-apache-httpclient" target="1.5" />
+      <module name="sentinel-demo-apollo-datasource" target="1.5" />
+      <module name="sentinel-demo-basic" target="1.5" />
+      <module name="sentinel-demo-cluster" target="1.5" />
+      <module name="sentinel-demo-cluster-embedded" target="1.5" />
+      <module name="sentinel-demo-cluster-server-alone" target="17" />
+      <module name="sentinel-demo-command-handler" target="17" />
+      <module name="sentinel-demo-dubbo" target="1.5" />
+      <module name="sentinel-demo-dynamic-file-rule" target="1.5" />
+      <module name="sentinel-demo-etcd-datasource" target="1.5" />
+      <module name="sentinel-demo-jax-rs" target="1.5" />
+      <module name="sentinel-demo-log-logback" target="1.5" />
+      <module name="sentinel-demo-motan" target="1.5" />
+      <module name="sentinel-demo-nacos-datasource" target="1.5" />
+      <module name="sentinel-demo-okhttp" target="17" />
+      <module name="sentinel-demo-parameter-flow-control" target="1.5" />
+      <module name="sentinel-demo-quarkus" target="1.8" />
+      <module name="sentinel-demo-rocketmq" target="1.5" />
+      <module name="sentinel-demo-slot-spi" target="1.5" />
+      <module name="sentinel-demo-slotchain-spi" target="1.5" />
+      <module name="sentinel-demo-sofa-rpc" target="1.5" />
+      <module name="sentinel-demo-spring-cloud-gateway" target="17" />
+      <module name="sentinel-demo-spring-webflux" target="1.5" />
+      <module name="sentinel-demo-spring-webmvc" target="1.5" />
+      <module name="sentinel-demo-transport-spring-mvc" target="17" />
+      <module name="sentinel-demo-zookeeper-datasource" target="17" />
+      <module name="sentinel-demo-zuul-gateway" target="17" />
+      <module name="sentinel-demo-zuul2-gateway" target="17" />
+      <module name="sentinel-dubbo-adapter" target="1.5" />
+      <module name="sentinel-extension" target="1.5" />
+      <module name="sentinel-grpc-adapter" target="1.5" />
+      <module name="sentinel-jax-rs-adapter" target="1.5" />
+      <module name="sentinel-jax-rs-quarkus-adapter" target="1.8" />
+      <module name="sentinel-jax-rs-quarkus-adapter-deployment" target="1.8" />
+      <module name="sentinel-logging" target="1.5" />
+      <module name="sentinel-logging-slf4j" target="1.5" />
+      <module name="sentinel-metric-exporter" target="1.5" />
+      <module name="sentinel-motan-adapter" target="1.5" />
+      <module name="sentinel-native-image-quarkus-adapter" target="1.8" />
+      <module name="sentinel-native-image-quarkus-adapter-deployment" target="1.8" />
+      <module name="sentinel-okhttp-adapter" target="1.5" />
+      <module name="sentinel-parameter-flow-control" target="17" />
+      <module name="sentinel-parent" target="17" />
+      <module name="sentinel-prometheus-metric-exporter" target="1.5" />
+      <module name="sentinel-quarkus-adapter-parent" target="1.8" />
+      <module name="sentinel-reactor-adapter" target="17" />
+      <module name="sentinel-sofa-rpc-adapter" target="1.5" />
+      <module name="sentinel-spring-cloud-gateway-adapter" target="1.5" />
+      <module name="sentinel-spring-webflux-adapter" target="1.5" />
+      <module name="sentinel-spring-webmvc-adapter" target="1.5" />
+      <module name="sentinel-spring-webmvc-v6x-adapter" target="1.5" />
+      <module name="sentinel-transport" target="17" />
+      <module name="sentinel-transport-common" target="1.5" />
+      <module name="sentinel-transport-netty-http" target="17" />
+      <module name="sentinel-transport-simple-http" target="17" />
+      <module name="sentinel-transport-spring-mvc" target="1.5" />
+      <module name="sentinel-web-adapter-common" target="1.5" />
+      <module name="sentinel-web-servlet" target="1.5" />
+      <module name="sentinel-zuul-adapter" target="1.5" />
+      <module name="sentinel-zuul2-adapter" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gateway" options="-parameters" />
       <module name="model" options="-parameters" />
+      <module name="sentinel-annotation-quarkus-adapter" options="-parameters" />
+      <module name="sentinel-annotation-quarkus-adapter-deployment" options="-parameters" />
+      <module name="sentinel-demo-quarkus" options="-parameters" />
+      <module name="sentinel-jax-rs-quarkus-adapter" options="-parameters" />
+      <module name="sentinel-jax-rs-quarkus-adapter-deployment" options="-parameters" />
+      <module name="sentinel-native-image-quarkus-adapter" options="-parameters" />
+      <module name="sentinel-native-image-quarkus-adapter-deployment" options="-parameters" />
+      <module name="sentinel-quarkus-adapter-parent" options="-parameters" />
     </option>
   </component>
 </project>

@@ -4,6 +4,7 @@ package com.model.restservice;
 import com.model.message.ServiceRequestMsg;
 import com.model.message.ServiceResponseMsg;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 

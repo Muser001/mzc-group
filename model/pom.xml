@@ -97,6 +97,13 @@
 		</dependency>
 
 
+		<!--sentinel依赖-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+			<version>2.2.5.RELEASE</version>
+		</dependency>
+
 		<!--ZooKeeper -->
 <!--		<dependency>-->
 <!--			<groupId>org.apache.dubbo</groupId>-->
