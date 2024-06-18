@@ -1,4 +1,4 @@
-package com.model.restservice;
+package modelprovider.service.api;
 
 import com.model.message.ServiceRequestMsg;
 import com.model.message.ServiceResponseMsg;
@@ -8,9 +8,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-
 @Path("service")
-public interface RestService {
+public interface ServiceRest {
 
     /**
      * 项目入口
@@ -22,5 +21,4 @@ public interface RestService {
     @Produces({"application/json; charset=UTF-8"})
     @Consumes({"application/json"})
     ServiceResponseMsg doInvoke(ServiceRequestMsg serviceRequestMsg);
-
 }

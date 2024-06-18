@@ -1,4 +1,7 @@
 package com.model.dto;
 
-public class BaseInputDTO {
+import java.io.Serializable;
+
+public class BaseInputDTO implements Serializable {
+    private static final long serialVersionUID = -6972120868746828075L;
 }

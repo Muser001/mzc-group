@@ -1,12 +1,16 @@
 mybatis:
   #  type-aliases-package: com.example.transaction.dao
   mapper-locations: classpath:/mapper/*.xml
+server:
+  port: 8081
 spring:
-  application:
-    name: model_mzc
-  cloud:
-    nacos:
-      server-addr: nacos://127.0.0.1:8848
+#  application:
+#    name: rest-provider
+
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
 
 
     sentinel:
@@ -17,10 +21,16 @@ spring:
 #    allow-bean-definition-overriding: true
 
 
-#只需在生产者配置即可，不需要在消费者配置，所以不在此配置
-#dubbo:
-#  registry:
-#    address: nacos://127.0.0.1:8848
-#    id: model_mzc
-#  application:
-#    name: model_mzc
+dubbo:
+  registry:
+    address: nacos://127.0.0.1:8848
+  protocol:
+      name: rest
+      port: 8080
+      server: tomcat
+  service:
+    - interface: modelprovider.service.api.ServiceRest
+      protocol: rest, dubbo
+      ref: serviceRest
+userService:
+  class: modelprovider.service.impl.ServiceRestImpl

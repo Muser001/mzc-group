@@ -20,7 +20,7 @@ import java.util.Map;
 @Slf4j
 @Configuration
 @EnableAspectJAutoProxy
-public class Configurationtest1 {
+public class GlobalTransactionConfiguration {
 
     @Bean("txadvice")
     public TransactionInterceptor txadvice(TransactionManager transactionManager) {
